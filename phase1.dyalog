@@ -95,7 +95,8 @@ rightAlign←{d1←1=≡⍵ ⋄ e←(⊂⍣d1) ⍵ ⋄ ↑(-⍺)↑¨e}
 ⍝ Note the first 2 expressions: d1←1=≡⍵ (is ⍵ of depth 1?)
 ⍝ and e←(⊂⍣d1)⍵ (enclose ⍵ if its depth is 1, or, equivalently d1 is 1).
 ⍝ This rather clumsy contraption serves only to make the expression ↑(-⍺)↑¨e work with
-⍝ vectors (arrays of rank 1)
-
+⍝ vectors (arrays of rank 1).
+⍝ Another solution (without the use of EACH, but does not work for inputs with trailing spaces):
+{(-⍺)(↑⍤1)(-((⊥⍨' '∘=)⍤1)m)⌽m←↑⍵}
 
 
